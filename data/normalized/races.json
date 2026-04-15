@@ -1,0 +1,137 @@
+[
+  {
+    "id": "race-aasimar-2024",
+    "slug": "aasimar-2024",
+    "name": "Aasimar [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-dragonborn-2024",
+    "slug": "dragonborn-2024",
+    "name": "Dragonborn [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-dwarf-2024",
+    "slug": "dwarf-2024",
+    "name": "Dwarf [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-elf-drow-2024",
+    "slug": "elf-drow-2024",
+    "name": "Elf, Drow [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-elf-high-2024",
+    "slug": "elf-high-2024",
+    "name": "Elf, High [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-elf-wood-2024",
+    "slug": "elf-wood-2024",
+    "name": "Elf, Wood [2024]",
+    "speed": "35",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-gnome-forest-2024",
+    "slug": "gnome-forest-2024",
+    "name": "Gnome, Forest [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-gnome-rock-2024",
+    "slug": "gnome-rock-2024",
+    "name": "Gnome, Rock [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-goliath-2024",
+    "slug": "goliath-2024",
+    "name": "Goliath [2024]",
+    "speed": "35",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-halfling-2024",
+    "slug": "halfling-2024",
+    "name": "Halfling [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-human-2024",
+    "slug": "human-2024",
+    "name": "Human [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-orc-2024",
+    "slug": "orc-2024",
+    "name": "Orc [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-tiefling-abyssal-2024",
+    "slug": "tiefling-abyssal-2024",
+    "name": "Tiefling, Abyssal [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-tiefling-chthonic-2024",
+    "slug": "tiefling-chthonic-2024",
+    "name": "Tiefling, Chthonic [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "race-tiefling-infernal-2024",
+    "slug": "tiefling-infernal-2024",
+    "name": "Tiefling, Infernal [2024]",
+    "speed": "30",
+    "ability": "",
+    "text": [],
+    "source": ""
+  }
+]

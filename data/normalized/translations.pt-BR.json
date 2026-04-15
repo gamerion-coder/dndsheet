@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "locale": "pt-BR",
+    "ruleset": "dnd-5e-2024",
+    "version": "1.0"
+  },
+  "ui": {
+    "appTitle": "Construtor de Personagem D&D 5e",
+    "languageToggle": "Idioma",
+    "english": "English",
+    "portuguese": "Português",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "finish": "Finalizar",
+    "printToPDF": "Imprimir para PDF",
+    "startOver": "Começar Novamente",
+    "saveCharacter": "Salvar Personagem",
+    "characterSheet": "Ficha de Personagem",
+    "characterPortrait": "Retrato do Personagem"
+  },
+  "steps": {
+    "step1": "Passo 1: Escolha Espécie e Tendência",
+    "step2": "Passo 2: Atribua Valores de Habilidade",
+    "step3": "Passo 3: Escolha Classe",
+    "step4": "Passo 4: Escolha Perícias",
+    "step5": "Passo 5: Escolha Antecedente",
+    "step6": "Passo 6: Escolha Nível",
+    "step7": "Passo 7: Escolha Arquétipo",
+    "step8": "Passo 8: Escolha Talentos",
+    "step9": "Passo 9: Escolha Magias",
+    "step10": "Passo 10: Adicione Equipamento",
+    "step11": "Revise Seu Personagem"
+  },
+  "fields": {
+    "species": "Espécie / Raça",
+    "alignment": "Tendência",
+    "strength": "Força (FOR)",
+    "dexterity": "Destreza (DES)",
+    "constitution": "Constituição (CON)",
+    "intelligence": "Inteligência (INT)",
+    "wisdom": "Sabedoria (SAB)",
+    "charisma": "Carisma (CAR)",
+    "characterClass": "Classe",
+    "skills": "Perícias",
+    "background": "Antecedente",
+    "level": "Nível",
+    "subclass": "Arquétipo",
+    "feats": "Talentos",
+    "spells": "Magias",
+    "equipment": "Equipamento"
+  },
+  "sheet": {
+    "characterName": "Nome do Personagem",
+    "species": "Espécie",
+    "alignment": "Tendência",
+    "class": "Classe",
+    "level": "Nível",
+    "background": "Antecedente",
+    "abilityScores": "Valores de Habilidade",
+    "skillsTitle": "Perícias",
+    "featsTitle": "Talentos",
+    "spellsTitle": "Magias",
+    "equipmentTitle": "Equipamento",
+    "proficiencyBonus": "Bônus de Proficiência",
+    "initiative": "Iniciativa",
+    "armorClass": "Classe de Armadura",
+    "hitPoints": "Pontos de Vida",
+    "speed": "Deslocamento",
+    "spellSaveDC": "CD de Salvação de Magia"
+  },
+  "selections": {
+    "selectSpecies": "-- Selecione Espécie --",
+    "selectAlignment": "-- Selecione Tendência --",
+    "selectClass": "-- Selecione Classe --",
+    "selectBackground": "-- Selecione Antecedente --",
+    "selectLevel": "-- Selecione Nível --",
+    "selectSubclass": "-- Selecione Arquétipo --",
+    "noSubclassAvailable": "Arquétipo disponível a partir do nível 3",
+    "noFeatsAvailable": "Nenhum talento disponível para seu nível",
+    "noSpellsAvailable": "Nenhuma magia disponível para sua classe e nível"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalidLevel": "O nível deve estar entre 1 e 20",
+    "subclassGated": "A seleção de arquétipo requer nível 3 ou superior",
+    "maxSkillsReached": "Número máximo de perícias selecionadas"
+  }
+}

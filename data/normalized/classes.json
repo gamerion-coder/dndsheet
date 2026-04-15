@@ -1,0 +1,110 @@
+[
+  {
+    "id": "class-barbarian-2024",
+    "slug": "barbarian-2024",
+    "name": "Barbarian [2024]",
+    "hd": "12",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-bard-2024",
+    "slug": "bard-2024",
+    "name": "Bard [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-cleric-2024",
+    "slug": "cleric-2024",
+    "name": "Cleric [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-druid-2024",
+    "slug": "druid-2024",
+    "name": "Druid [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-fighter-2024",
+    "slug": "fighter-2024",
+    "name": "Fighter [2024]",
+    "hd": "10",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-monk-2024",
+    "slug": "monk-2024",
+    "name": "Monk [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-paladin-2024",
+    "slug": "paladin-2024",
+    "name": "Paladin [2024]",
+    "hd": "10",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-ranger-2024",
+    "slug": "ranger-2024",
+    "name": "Ranger [2024]",
+    "hd": "10",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-rogue-2024",
+    "slug": "rogue-2024",
+    "name": "Rogue [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-sorcerer-2024",
+    "slug": "sorcerer-2024",
+    "name": "Sorcerer [2024]",
+    "hd": "6",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-warlock-2024",
+    "slug": "warlock-2024",
+    "name": "Warlock [2024]",
+    "hd": "8",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  },
+  {
+    "id": "class-wizard-2024",
+    "slug": "wizard-2024",
+    "name": "Wizard [2024]",
+    "hd": "6",
+    "spellcast": "",
+    "text": [],
+    "source": ""
+  }
+]

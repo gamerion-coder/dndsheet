@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "locale": "en",
+    "ruleset": "dnd-5e-2024",
+    "version": "1.0"
+  },
+  "ui": {
+    "appTitle": "D&D 5e Character Builder",
+    "languageToggle": "Language",
+    "english": "English",
+    "portuguese": "Português",
+    "previous": "Previous",
+    "next": "Next",
+    "finish": "Finish",
+    "printToPDF": "Print to PDF",
+    "startOver": "Start Over",
+    "saveCharacter": "Save Character",
+    "characterSheet": "Character Sheet",
+    "characterPortrait": "Character Portrait"
+  },
+  "steps": {
+    "step1": "Step 1: Choose Species and Alignment",
+    "step2": "Step 2: Assign Ability Scores",
+    "step3": "Step 3: Choose Class",
+    "step4": "Step 4: Choose Skills",
+    "step5": "Step 5: Choose Background",
+    "step6": "Step 6: Choose Level",
+    "step7": "Step 7: Choose Subclass",
+    "step8": "Step 8: Choose Feats",
+    "step9": "Step 9: Choose Spells",
+    "step10": "Step 10: Add Equipment",
+    "step11": "Review Your Character"
+  },
+  "fields": {
+    "species": "Species / Race",
+    "alignment": "Alignment",
+    "strength": "Strength (STR)",
+    "dexterity": "Dexterity (DEX)",
+    "constitution": "Constitution (CON)",
+    "intelligence": "Intelligence (INT)",
+    "wisdom": "Wisdom (WIS)",
+    "charisma": "Charisma (CHA)",
+    "characterClass": "Class",
+    "skills": "Skills",
+    "background": "Background",
+    "level": "Level",
+    "subclass": "Subclass",
+    "feats": "Feats / Talents",
+    "spells": "Spells",
+    "equipment": "Equipment"
+  },
+  "sheet": {
+    "characterName": "Character Name",
+    "species": "Species",
+    "alignment": "Alignment",
+    "class": "Class",
+    "level": "Level",
+    "background": "Background",
+    "abilityScores": "Ability Scores",
+    "skillsTitle": "Skills",
+    "featsTitle": "Feats",
+    "spellsTitle": "Spells",
+    "equipmentTitle": "Equipment",
+    "proficiencyBonus": "Proficiency Bonus",
+    "initiative": "Initiative",
+    "armorClass": "Armor Class",
+    "hitPoints": "Hit Points",
+    "speed": "Speed",
+    "spellSaveDC": "Spell Save DC"
+  },
+  "selections": {
+    "selectSpecies": "-- Select Species --",
+    "selectAlignment": "-- Select Alignment --",
+    "selectClass": "-- Select Class --",
+    "selectBackground": "-- Select Background --",
+    "selectLevel": "-- Select Level --",
+    "selectSubclass": "-- Select Subclass --",
+    "noSubclassAvailable": "Subclass available at level 3 or higher",
+    "noFeatsAvailable": "No feats available for your level",
+    "noSpellsAvailable": "No spells available for your class and level"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidLevel": "Level must be between 1 and 20",
+    "subclassGated": "Subclass selection requires level 3 or higher",
+    "maxSkillsReached": "Maximum number of skills selected"
+  }
+}
