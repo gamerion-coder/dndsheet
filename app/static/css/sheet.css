@@ -1,0 +1,72 @@
+/* sheet.css - Styles specific to the rendered character sheet */
+
+.character-sheet-output {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.character-sheet-output h2 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.character-sheet-output p {
+    margin-bottom: 8px;
+}
+
+.character-sheet-output strong {
+    color: #333;
+}
+
+.character-sheet-output .section {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.character-sheet-output .section:last-child {
+    margin-bottom: 0;
+}
+
+.character-sheet-output .portrait {
+    width: 150px;
+    height: 150px;
+    background-color: #e0e0e0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #666;
+}
+
+.print-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.print-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ t.ui.appTitle }} - {{ t.steps.step1 }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/builder.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="wizard-container">
+    <!-- Step 1: Choose Species and Alignment -->
+    <div class="wizard-step active" id="step-1">
+        <h2 id="step1-title">{{ t.steps.step1 }}</h2>
+        <label for="species-select" id="species-label">{{ t.fields.species }}:</label>
+        <select id="species-select"></select>
+
+        <label for="alignment-select" id="alignment-label">{{ t.fields.alignment }}:</label>
+        <select id="alignment-select"></select>
+    </div>
+
+    <!-- Step 2: Assign Ability Scores -->
+    <div class="wizard-step" id="step-2">
+        <h2 id="step2-title">{{ t.steps.step2 }}</h2>
+        <div class="attribute-input-group">
+            <label for="attr-str" id="str-label">{{ t.fields.strength }}:</label>
+            <input type="number" id="attr-str" value="10" min="1" max="20">
+        </div>
+        <div class="attribute-input-group">
+            <label for="attr-dex" id="dex-label">{{ t.fields.dexterity }}:</label>
+            <input type="number" id="attr-dex" value="10" min="1" max="20">
+        </div>
+        <div class="attribute-input-group">
+            <label for="attr-con" id="con-label">{{ t.fields.constitution }}:</label>
+            <input type="number" id="attr-con" value="10" min="1" max="20">
+        </div>
+        <div class="attribute-input-group">
+            <label for="attr-int" id="int-label">{{ t.fields.intelligence }}:</label>
+            <input type="number" id="attr-int" value="10" min="1" max="20">
+        </div>
+        <div class="attribute-input-group">
+            <label for="attr-wis" id="wis-label">{{ t.fields.wisdom }}:</label>
+            <input type="number" id="attr-wis" value="10" min="1" max="20">
+        </div>
+        <div class="attribute-input-group">
+            <label for="attr-cha" id="cha-label">{{ t.fields.charisma }}:</label>
+            <input type="number" id="attr-cha" value="10" min="1" max="20">
+        </div>
+    </div>
+
+    <!-- Step 3: Choose Class -->
+    <div class="wizard-step" id="step-3">
+        <h2 id="step3-title">{{ t.steps.step3 }}</h2>
+        <label for="class-select" id="class-label">{{ t.fields.characterClass }}:</label>
+        <select id="class-select"></select>
+    </div>
+
+    <!-- Step 4: Choose Skills -->
+    <div class="wizard-step" id="step-4">
+        <h2 id="step4-title">{{ t.steps.step4 }}</h2>
+        <label id="skills-label">{{ t.fields.skills }}:</label>
+        <div id="skills-checkboxes"></div>
+    </div>
+
+    <!-- Step 5: Choose Background -->
+    <div class="wizard-step" id="step-5">
+        <h2 id="step5-title">{{ t.steps.step5 }}</h2>
+        <label for="background-select" id="background-label">{{ t.fields.background }}:</label>
+        <select id="background-select"></select>
+    </div>
+
+    <!-- Step 6: Choose Level (1-20) -->
+    <div class="wizard-step" id="step-6">
+        <h2 id="step6-title">{{ t.steps.step6 }}</h2>
+        <label for="level-select" id="level-label">{{ t.fields.level }}:</label>
+        <select id="level-select"></select>
+    </div>
+
+    <!-- Step 7: Choose Subclass (only if level > 3) -->
+    <div class="wizard-step" id="step-7">
+        <h2 id="step7-title">{{ t.steps.step7 }}</h2>
+        <label for="subclass-select" id="subclass-label">{{ t.fields.subclass }}:</label>
+        <select id="subclass-select"></select>
+    </div>
+
+    <!-- Step 8: Select Feats (gated by levels) -->
+    <div class="wizard-step" id="step-8">
+        <h2 id="step8-title">{{ t.steps.step8 }}</h2>
+        <label id="feats-label">{{ t.fields.feats }}:</label>
+        <div id="feats-checkboxes"></div>
+    </div>
+
+    <!-- Step 9: Select Spells (gated by class and level) -->
+    <div class="wizard-step" id="step-9">
+        <h2 id="step9-title">{{ t.steps.step9 }}</h2>
+        <label id="spells-label">{{ t.fields.spells }}:</label>
+        <div id="spells-checkboxes"></div>
+    </div>
+
+    <!-- Step 10: Add Equipment -->
+    <div class="wizard-step" id="step-10">
+        <h2 id="step10-title">{{ t.steps.step10 }}</h2>
+        <label id="equipment-label">{{ t.fields.equipment }}:</label>
+        <textarea id="equipment-textarea" rows="5" placeholder="{{ t.fields.equipmentPlaceholder }}"></textarea>
+    </div>
+
+    <div class="wizard-navigation">
+        <button id="prevBtn" type="button">{{ t.ui.previous }}</button>
+        <button id="nextBtn" type="button">{{ t.ui.next }}</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/builder.js') }}"></script>
+</div>
+{% endblock %}

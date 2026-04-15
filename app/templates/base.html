@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.ui.appTitle }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <header>
+            <h1>{{ t.ui.appTitle }}</h1>
+            <nav class="language-toggle">
+                <span>{{ t.ui.languageToggle }}:</span>
+                <button id="lang-en" onclick="setLanguage('en')">{{ t.ui.english }}</button>
+                <button id="lang-pt" onclick="setLanguage('pt-BR')">{{ t.ui.portuguese }}</button>
+            </nav>
+        </header>
+        {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
+</body>
+</html>

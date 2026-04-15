@@ -1,0 +1,28 @@
+/* print.css - Styles for printing the character sheet */
+@media print {
+    body {
+        background-color: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .container, .language-toggle, .wizard-navigation, .print-button-container {
+        display: none !important; /* Hide UI elements for print */
+    }
+
+    .character-sheet-output {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .character-sheet-output h2, .character-sheet-output p, .character-sheet-output strong {
+        color: #000 !important;
+    }
+
+    .character-sheet-output .portrait {
+        border: 1px solid #000 !important;
+    }
+}

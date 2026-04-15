@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ t.ui.appTitle }} - {{ t.ui.characterSheet }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sheet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/print.css') }}" media="print">
+{% endblock %}
+
+{% block content %}
+<div class="character-sheet-output">
+    <h2 id="cs-output-title">{{ t.sheet.characterName }}</h2>
+    <div class="portrait">
+        <span id="cs-portrait-text">{{ t.ui.characterPortrait }}</span>
+    </div>
+
+    <div class="section">
+        <p><strong id="cs-race-label">{{ t.sheet.species }}:</strong> {{ character.character.species.label | default('N/A') }}</p>
+        <p><strong id="cs-alignment-label">{{ t.sheet.alignment }}:</strong> {{ character.character.alignment | default('N/A') }}</p>
+        <p><strong id="cs-class-label">{{ t.sheet.class }}:</strong> {{ character.character.class.label | default('N/A') }}</p>
+        <p><strong id="cs-level-label">{{ t.sheet.level }}:</strong> {{ character.character.level | default('N/A') }}</p>
+        <p><strong id="cs-background-label">{{ t.sheet.background }}:</strong> {{ character.character.background.label | default('N/A') }}</p>
+    </div>
+
+    <div class="section">
+        <h3 id="cs-attributes-title">{{ t.sheet.abilityScores }}</h3>
+        <p><strong>{{ t.fields.strength }}:</strong> {{ character.abilities.strength | default('N/A') }}</p>
+        <p><strong>{{ t.fields.dexterity }}:</strong> {{ character.abilities.dexterity | default('N/A') }}</p>
+        <p><strong>{{ t.fields.constitution }}:</strong> {{ character.abilities.constitution | default('N/A') }}</p>
+        <p><strong>{{ t.fields.intelligence }}:</strong> {{ character.abilities.intelligence | default('N/A') }}</p>
+        <p><strong>{{ t.fields.wisdom }}:</strong> {{ character.abilities.wisdom | default('N/A') }}</p>
+        <p><strong>{{ t.fields.charisma }}:</strong> {{ character.abilities.charisma | default('N/A') }}</p>
+    </div>
+
+    <div class="section">
+        <h3 id="cs-skills-title">{{ t.sheet.skillsTitle }}</h3>
+        <p>{{ character.skills | join(', ') | default('N/A') }}</p>
+    </div>
+
+    <div class="section">
+        <h3 id="cs-feats-title">{{ t.sheet.featsTitle }}</h3>
+        <p>{{ character.feats | join(', ') | default('N/A') }}</p>
+    </div>
+
+    <div class="section">
+        <h3 id="cs-spells-title">{{ t.sheet.spellsTitle }}</h3>
+        <p>{{ character.spells.known | join(', ') | default('N/A') }}</p>
+    </div>
+
+    <div class="section">
+        <h3 id="cs-equipment-title">{{ t.sheet.equipmentTitle }}</h3>
+        <p>{{ character.equipment | join(', ') | default('N/A') }}</p>
+    </div>
+
+    <div class="print-button-container">
+        <button class="print-button" onclick="window.print()">{{ t.ui.printToPDF }}</button>
+    </div>
+</div>
+{% endblock %}
