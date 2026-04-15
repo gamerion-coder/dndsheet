@@ -1,12 +1,12 @@
 # BACKLOG.md
 
 ## P0 - Foundation
-- [ ] Create project folder structure
-- [ ] Add Python app scaffold
-- [ ] Add parser scaffold
-- [ ] Place XML under `data/raw/reference.xml`
-- [ ] Inspect XML structure and document mappings
-- [ ] Define normalized schemas for all core domains
+- [x] Create project folder structure
+- [x] Add Python app scaffold
+- [x] Add parser scaffold
+- [x] Place XML under `data/raw/reference.xml`
+- [x] Inspect XML structure and document mappings
+- [x] Define normalized schemas for all core domains
 
 ## P1 - Data Normalization
 - [ ] Normalize species/race data

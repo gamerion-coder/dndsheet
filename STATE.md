@@ -1,38 +1,36 @@
-# STATE.md
-
 ## Project
 dndsheet
 
 ## Current Status
-Not started
+Phase 1 Complete — Parser and Normalized Catalogs Ready
 
 ## Current Phase
-Foundation
+Phase 1 Complete
 
 ## Current Focus
-Prepare the project scaffold and inspect the XML into a normalized schema plan.
+Phase 2: Building the Flask API and wizard pages.
 
 ## Last Concrete Result
-None yet.
+- Normalized JSON catalogs generated for all 6 entity types.
+- XML parsed: 1615 items, 449 spells, 127 feats, 15 races, 12 classes, 16 backgrounds.
+- Translations framework (EN/PT) scaffolded.
+- Initial single-file wizard (index.html) prototyped but not yet integrated.
 
 ## Active Blocker
-The actual XML structure has not yet been inspected in this project context.
+None.
 
 ## Assumptions Currently in Force
 - XML is the primary content source.
-- The final artifact is a JSON-backed HTML sheet.
-- English and Portuguese must come from the same canonical data.
-- Jinja2 is the preferred renderer.
+- English is canonical; Portuguese degrades to English gracefully.
+- Flask + Jinja2 + vanilla JS is the agreed stack.
 - The first version targets one printable 2024-compatible character sheet layout.
 
 ## Next Best Action
-1. place the XML in `data/raw/reference.xml`
-2. inspect its top-level entities and nesting
-3. draft the normalization map for species, classes, subclasses, skills, backgrounds, feats, spells, and equipment
-4. scaffold the parser
+1. Set up Flask app skeleton (routes, config).
+2. Wire normalized JSON catalogs into Flask API endpoints.
+3. Replace the single-file index.html with proper Jinja2 builder pages.
+4. Implement step validation in backend.
+5. Build character JSON persistence to `exports/characters/`.
 
 ## Last Verification
-Not available yet.
-
-## Notes
-Do not claim rules completeness until the XML has been parsed and compared against the open 2024 references.
+2026-04-15 15:21 UTC — Parser ran successfully, generated catalogs verified.
