@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Sheet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sheet.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>D&D Character Sheets</h1>
+            <div class="character-selection">
+                <label for="character-select">Select Character:</label>
+                <select id="character-select">
+                    <option value="">--Please choose a character--</option>
+                    {% for character in characters %}
+                    <option value="{{ character.id }}">{{ character.name }}</option>
+                    {% endfor %}
+                </select>
+                <button id="new-character-btn">Create New Character</button>
+            </div>
+            <div id="character-display-area">
+                <!-- Character details will be loaded here -->
+            </div>
+        </header>
+    </div>
+    <script src="{{ url_for('static', filename='js/sheet.js') }}"></script>
+</body>
+</html>

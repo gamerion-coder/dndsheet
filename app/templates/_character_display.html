@@ -1,0 +1,52 @@
+<div class="character-sheet-output">
+    <header>
+        <h2 id="cs-output-title">{{ character.name }}</h2>
+        <div class="character-basics">
+            <p><strong>Class & Level:</strong> {{ character.class }} {{ character.level }}</p>
+            <p><strong>Race:</strong> {{ character.race }}</p>
+        </div>
+    </header>
+
+    <div class="section">
+        <h3>Abilities</h3>
+        <div class="ability-scores">
+            <div class="ability-score">
+                <h3>STR</h3>
+                <p class="score">{{ character.strength }}</p>
+            </div>
+            <div class="ability-score">
+                <h3>DEX</h3>
+                <p class="score">{{ character.dexterity }}</p>
+            </div>
+            <div class="ability-score">
+                <h3>CON</h3>
+                <p class="score">{{ character.constitution }}</p>
+            </div>
+            <div class="ability-score">
+                <h3>INT</h3>
+                <p class="score">{{ character.intelligence }}</p>
+            </div>
+            <div class="ability-score">
+                <h3>WIS</h3>
+                <p class="score">{{ character.wisdom }}</p>
+            </div>
+            <div class="ability-score">
+                <h3>CHA</h3>
+                <p class="score">{{ character.charisma }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Combat</h3>
+        <div class="combat-stats">
+            <p><strong>Armor Class:</strong> {{ character.ac }}</p>
+            <p><strong>Hit Points:</strong> {{ character.hp }}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Equipment</h3>
+        <p>{{ character.inventory }}</p>
+    </div>
+</div>

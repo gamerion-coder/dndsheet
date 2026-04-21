@@ -1,69 +1,75 @@
-# BACKLOG.md
+# Project Backlog
 
-## P0 - Foundation
-- [x] Create project folder structure
-- [x] Add Python app scaffold
-- [x] Add parser scaffold
-- [x] Place XML under `data/raw/reference.xml`
-- [x] Inspect XML structure and document mappings
-- [x] Define normalized schemas for all core domains
+## 1. Project Setup
 
-## P1 - Data Normalization
-- [ ] Normalize species/race data
-- [ ] Normalize alignments
-- [ ] Normalize classes
-- [ ] Normalize subclasses
-- [ ] Normalize skills
-- [ ] Normalize backgrounds
-- [ ] Normalize feats/talents
-- [ ] Normalize spells
-- [ ] Normalize equipment
-- [ ] Build translation dictionaries for `en` and `pt-BR`
+### 1.1 [x] Initialize project folder and base files
+- Assigned to: Gamerion
+- Depends on: none
+- Description: Create the project directory, README.md, LOG.md, and BACKLOG.md.
+- Expected output: Project structure created in the shared-projects directory.
 
-## P2 - Rules Layer
-- [ ] Implement step validation service
-- [ ] Implement level gating
-- [ ] Implement subclass gating at level >= 3
-- [ ] Implement feat prerequisite logic
-- [ ] Implement spell eligibility logic
-- [ ] Implement derived stat calculations
+### 1.2 [x] Announce project to all agents
+- Assigned to: Gamerion
+- Depends on: 1.1
+- Description: Inform Darwin, Curie, Einstein, Turing, and Shannon that the project exists; instruct them to read README.md and BACKLOG.md, store the project in their memory, and log all future actions in LOG.md.
+- Expected output: All agents notified and instructed.
 
-## P3 - Builder UI
-- [ ] Build wizard shell
-- [ ] Build step 1 species + alignment
-- [ ] Build step 2 ability scores
-- [ ] Build step 3 class
-- [ ] Build step 4 skills
-- [ ] Build step 5 background
-- [ ] Build step 6 level
-- [ ] Build step 7 subclass
-- [ ] Build step 8 feats
-- [ ] Build step 9 spells
-- [ ] Build step 10 equipment
-- [ ] Build review/export screen
+### 1.3 [x] Verify shared-workspace access for all agents
+- Assigned to: Gamerion
+- Depends on: 1.1
+- Description: Confirm that all local agents can access the project through the symbolic link to the shared workspace in their own workspaces.
+- Expected output: Access verified or missing access reported explicitly.
 
-## P4 - Rendering
-- [ ] Design Jinja sheet template
-- [ ] Render final JSON into HTML
-- [ ] Add bilingual sheet labels
-- [ ] Add print stylesheet
-- [ ] Add print button
+## 5. Engineering and Automation
 
-## P5 - Quality
-- [ ] Add parser tests
-- [ ] Add normalization tests
-- [ ] Add validation tests
-- [ ] Add spell logic tests
-- [ ] Add feat logic tests
-- [ ] Add one end-to-end character creation test
+### 5.1 [x] Build Flask backend for character data
+- Assigned to: Turing
+- Depends on: 1.2, 1.3
+- Description: Implement Flask routes and logic for handling character creation, storage, and retrieval.
+- Expected output: Functional Flask API for character data management.
 
-## P6 - Documentation
-- [ ] Document XML assumptions
-- [ ] Document route/API usage
-- [ ] Document JSON schema
-- [ ] Document known limitations
+### 5.2 [x] Implement basic character data persistence
+- Assigned to: Turing
+- Depends on: 5.1
+- Description: Set up data storage (e.g., SQLite or flat files) for character sheets.
+- Expected output: Characters can be saved and loaded persistently.
 
-## Blocked / Needs Clarification
-- [ ] Exact XML structure unknown until inspected
-- [ ] Exact target sheet layout not yet attached here
-- [ ] Rule gaps outside XML may require explicit approval
+### 5.3 [x] Debug and fix Flask application runtime error
+- Assigned to: Turing
+- Depends on: 5.2
+- Description: Resolve `ModuleNotFoundError: No module named 'flask'` and ensure the Flask application runs correctly.
+- Expected output: Flask application starts without errors and is accessible.
+
+## 6. Design and Presentation
+
+### 6.1 [x] Design basic web interface for character sheet
+- Assigned to: Shannon
+- Depends on: 1.2, 1.3
+- Description: Create initial HTML/CSS templates for displaying and interacting with a character sheet.
+- Expected output: Wireframes and basic static HTML/CSS pages.
+
+### 6.2 [x] Integrate frontend with Flask backend
+- Assigned to: Shannon
+- Depends on: 5.1, 6.1
+- Description: Connect the designed frontend with the Flask backend to dynamically display and update character data.
+- Expected output: Interactive web application for character sheet management.
+
+### 6.3 [ ] Implement frontend UI for character data update and creation
+- Assigned to: Shannon
+- Depends on: 6.2
+- Description: Develop user interface elements for creating new characters and updating existing character details.
+- Expected output: Functional forms and interactive elements for character management.
+
+## 7. Integration and Delivery
+
+### 7.1 [x] Integrate outputs from all contributing agents
+- Assigned to: Gamerion
+- Depends on: 5.2, 6.2
+- Description: Consolidate the results of all applicable completed workstreams.
+- Expected output: Integrated project summary and coordinated next actions.
+
+### 7.2 [x] Define next cycle priorities
+- Assigned to: Gamerion
+- Depends on: 7.1
+- Description: Review completed work, identify gaps, and create or reprioritize additional tasks.
+- Expected output: Updated backlog with new prioritized tasks.

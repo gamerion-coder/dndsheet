@@ -70,3 +70,108 @@
 .print-button:hover {
     background-color: #0056b3;
 }
+
+/* Character Sheet Specific Styles from style.css */
+
+.character-basics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.character-basics p {
+    margin: 5px 10px;
+    flex: 1 1 30%; /* Allows items to grow and shrink, roughly 3 per row */
+    min-width: 150px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+section {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+h2 {
+    color: #a00;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.ability-scores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.ability-score {
+    border: 1px solid #ddd;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.ability-score h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.ability-score .score {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.ability-score .modifier {
+    font-size: 1.2em;
+    color: #080;
+    margin: 0;
+}
+
+.combat-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.hit-points {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hit-points .current-hp {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #a00;
+}
+
+.saving-throws ul,
+.skills ul,
+.features-traits ul,
+.equipment ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.saving-throws li,
+.skills li,
+.features-traits li,
+.equipment li {
+    margin-bottom: 5px;
+}
+
+.saving-throws input[type="checkbox"],
+.skills input[type="checkbox"] {
+    margin-right: 5px;
+}
