@@ -1,0 +1,11 @@
+{
+  "name": "Test Character",
+  "species": "Human",
+  "alignment": "Lawful Good",
+  "meta": {
+    "locale": "en",
+    "character_id": "c0b6330f-ad26-401b-bc26-f76ae7770238",
+    "created_at": "2026-04-21T22:56:14.537007",
+    "ruleset": "dnd-5e-2024"
+  }
+}

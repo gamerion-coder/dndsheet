@@ -1,7 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('sheet.js loaded and DOM content loaded.');
     const characterSelect = document.getElementById('character-select');
     const newCharacterBtn = document.getElementById('new-character-btn');
     const characterDisplayArea = document.getElementById('character-display-area');
+
+    console.log('characterSelect element:', characterSelect);
+    console.log('newCharacterBtn element:', newCharacterBtn);
+
+    // Function to populate the character selection dropdown
+    async function populateCharacterSelect() {
+        try {
+            const response = await fetch('/api/characters');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const characters = await response.json();
+
+            characterSelect.innerHTML = '<option value="">--Please choose a character--</option>'; // Clear existing options
+
+            if (characters.length === 0) {
+                // If no characters, display a default message or redirect to create new
+                characterSelect.innerHTML += '<option value="" disabled>No characters found. Create one!</option>';
+                // Optionally, redirect to builder if no characters exist
+                // window.location.href = '/builder';
+            } else {
+                characters.forEach(character => {
+                    const option = document.createElement('option');
+                    option.value = character.id;
+                    option.textContent = character.name;
+                    characterSelect.appendChild(option);
+                });
+                // Automatically select the first character if available
+                if (characters.length > 0) {
+                    characterSelect.value = characters[0].id;
+                    fetchCharacterDetails(characters[0].id);
+                }
+            }
+
+        } catch (error) {
+            console.error('Error populating character select:', error);
+        }
+    }
+
+    // Initial population of the dropdown
+    populateCharacterSelect();
 
     // Function to fetch and display character details
     async function fetchCharacterDetails(characterId) {
@@ -84,15 +126,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for character selection
     characterSelect.addEventListener('change', (event) => {
         const selectedCharacterId = event.target.value;
+        console.log('Character select changed. Selected ID:', selectedCharacterId);
         fetchCharacterDetails(selectedCharacterId);
     });
 
     // Event listener for "Create New Character" button
     newCharacterBtn.addEventListener('click', () => {
-        // For now, we'll just alert. Later, this could lead to a form.
-        alert('Feature to create new character is not yet implemented!');
+        console.log('Create New Character button clicked. Redirecting to builder.');
+        window.location.href = '/builder';
     });
 
     // Initial load: if a character is pre-selected (e.g., from URL or previous session)
     // fetchCharacterDetails(characterSelect.value);
-});
+
+    // Trigger initial load if a character is already selected (e.g., on page refresh)
+    if (characterSelect.value) {
+        console.log('Initial character selected:', characterSelect.value);
+        fetchCharacterDetails(characterSelect.value);
+    }

@@ -39,7 +39,8 @@ def create_routes(app):
     @app.route('/builder')
     def builder():
         lang = request.args.get('lang', 'en')
-        return render_template('builder.html', lang=lang)
+        translations = load_translations(lang)
+        return render_template('builder.html', lang=lang, t=translations)
 
     @app.route('/sheet/<character_id>')
     def sheet(character_id: str):
@@ -91,7 +92,7 @@ def create_routes(app):
                 return jsonify({'valid': False, 'error': 'Class required'}), 400
         elif step == 6:
             level = data.get('level', 0)
-            if not isinstance(level, int) or level < 1 or level > 20:
+            if not isinstance(level, int) or level < 1 or level > 20: # Corrected 'val' to 'level' here
                 return jsonify({'valid': False, 'error': 'Level must be 1-20'}), 400
         elif step == 7:
             level = data.get('level', 1)
@@ -120,6 +121,24 @@ def create_routes(app):
         path.write_text(json.dumps(character, indent=2, ensure_ascii=False), encoding='utf-8')
 
         return jsonify({'character_id': char_id, 'url': f'/sheet/{char_id}'})
+
+    @api.route('/api/characters')
+    def list_characters():
+        """Return a list of all saved characters (id and name)."""
+        characters = []
+        EXPORTS_DIR.mkdir(parents=True, exist_ok=True) # Ensure directory exists
+        for f in EXPORTS_DIR.iterdir():
+            if f.suffix == '.json':
+                try:
+                    character_data = json.loads(f.read_text(encoding='utf-8'))
+                    characters.append({
+                        'id': f.stem,
+                        'name': character_data.get('name', 'Unnamed Character') # Assuming character JSON has a 'name' key
+                    })
+                except json.JSONDecodeError:
+                    # Skip malformed JSON files
+                    continue
+        return jsonify(characters)
 
     @api.route('/api/character/<character_id>')
     def get_character(character_id: str):

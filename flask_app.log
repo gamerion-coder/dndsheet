@@ -1,0 +1,71 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.241.129:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 155-934-604
+127.0.0.1 - - [21/Apr/2026 22:43:10] "GET / HTTP/1.1" 200 -
+ * Detected change in '/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 155-934-604
+ * Detected change in '/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 155-934-604
+127.0.0.1 - - [21/Apr/2026 22:55:57] "[35m[1mGET /builder HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/routes.py", line 42, in builder
+    return render_template('builder.html', lang=lang)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/templates/builder.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/templates/base.html", line 6, in top-level template code
+    <title>{{ t.ui.appTitle }}</title>
+  File "/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 't' is undefined
+ * Detected change in '/home/gamerion_agent/.openclaw/shared-workspace/dndsheet/app/routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 155-934-604
+127.0.0.1 - - [21/Apr/2026 22:56:05] "GET /builder HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:07] "GET /api/catalog/items HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:10] "GET /api/translations/en HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:12] "POST /api/character/validate-step HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:14] "POST /api/character/export-json HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:16] "GET /api/characters HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 22:56:17] "GET /api/character/c0b6330f-ad26-401b-bc26-f76ae7770238 HTTP/1.1" 200 -
