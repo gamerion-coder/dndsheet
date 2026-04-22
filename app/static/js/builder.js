@@ -53,9 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLang = 'en';
 
     const elements = {
-        mainTitle: document.getElementById('main-title'),
-        langEnBtn: document.getElementById('lang-en'),
-        langPtBtn: document.getElementById('lang-pt'),
         prevBtn: document.getElementById('prevBtn'),
         nextBtn: document.getElementById('nextBtn'),
         speciesSelect: document.getElementById('species-select'),
@@ -99,22 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
         showStep(currentStep);
     }
 
-    function setLanguage(lang) {
+    async function setLanguage(lang) {
         currentLang = lang;
-        fetchData(`/api/translations/${lang}`).then(data => {
-            translations = data;
-            applyTranslations();
-            populateWizardOptions(); // Re-populate options to translate them if needed
-            showStep(currentStep); // Re-render current step with new language
-        });
+        translations = await fetchData(`/api/translations/${lang}`); // Await the fetch
+        applyTranslations();
+        populateWizardOptions(); // Re-populate options to translate them if needed
+        showStep(currentStep); // Re-render current step with new language
         // TODO: Re-render sheet if already displayed
     }
 
     function applyTranslations() {
         document.title = translations.ui.appTitle;
-        elements.mainTitle.textContent = translations.ui.appTitle;
-        elements.langEnBtn.textContent = translations.ui.english;
-        elements.langPtBtn.textContent = translations.ui.portuguese;
         elements.prevBtn.textContent = translations.ui.previous;
         elements.nextBtn.textContent = translations.ui.next;
 
@@ -391,9 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    elements.langEnBtn.addEventListener('click', () => setLanguage('en'));
-    elements.langPtBtn.addEventListener('click', () => setLanguage('pt-BR'));
 
     loadInitialData();
 });
