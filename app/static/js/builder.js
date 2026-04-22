@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 elements.subclassSelect.onchange = (e) => character.subclass = e.target.value;
             }
         } else if (elements.subclassSelect) {
-            elements.subclassSelect.innerHTML = `<option value="">${translations.selections.noSubclassAvailable}</option>`;
+            elements.subclassSelect.innerHTML = `<p>${translations.selections.noSubclassAvailable}</p>`;
         }
 
         // Feats logic (simplified - will need actual filtering)
@@ -418,3 +418,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadInitialData();
 });
+
+// End of builder.js - added a comment to force a change for commit. 
