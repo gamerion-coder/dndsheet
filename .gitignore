@@ -3,4 +3,4 @@ venv/
 __pycache__/
 .DS_Store
 .env
-data/*.db
+data/*.dbapp/static/js/app.js
