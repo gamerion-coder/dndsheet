@@ -122,10 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dndData.spells = await fetchData('/api/catalog/spells');
         dndData.feats = await fetchData('/api/catalog/feats');
 
-        // Load translations and apply
 
-        populateWizardOptions();
-        showStep(currentStep);
     }
 
     // Moved applyTranslations function definition here, using `elements` from DOMContentLoaded scope
