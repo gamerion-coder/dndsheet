@@ -144,3 +144,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Initial character selected:', characterSelect.value);
         fetchCharacterDetails(characterSelect.value);
     }
+});
