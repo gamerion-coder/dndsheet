@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'survival', name: 'Survival', ability: 'wis' },
         ] // Hardcoded for now, will fetch from API later
     };
-    let translations = {};
-    let currentLang = 'en';
+
 
     const elements = {
         prevBtn: document.getElementById('prevBtn'),
@@ -67,19 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
         equipmentTextarea: document.getElementById('equipment-textarea'),
     };
 
-    // Helper to fetch data from API
-    async function fetchData(url) {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error(`Failed to fetch ${url}:`, error);
-            return [];
-        }
+    // Event listeners for language buttons
+    const langEnBtn = document.getElementById('lang-en');
+    const langPtBtn = document.getElementById('lang-pt');
+
+    if (langEnBtn) {
+        langEnBtn.addEventListener('click', () => setLanguage('en'));
     }
+    if (langPtBtn) {
+        langPtBtn.addEventListener('click', () => setLanguage('pt-BR'));
+    }
+
+
 
     async function loadInitialData() {
         // Load static data first
@@ -90,22 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
         dndData.spells = await fetchData('/api/catalog/spells');
         dndData.feats = await fetchData('/api/catalog/feats');
 
-        // Load translations and apply
-        await setLanguage(currentLang);
+        // Call populate and showStep directly
         populateWizardOptions();
         showStep(currentStep);
     }
 
-    async function setLanguage(lang) {
-        currentLang = lang;
-        translations = await fetchData(`/api/translations/${lang}`); // Await the fetch
-        applyTranslations();
-        populateWizardOptions(); // Re-populate options to translate them if needed
-        showStep(currentStep); // Re-render current step with new language
-        // TODO: Re-render sheet if already displayed
-    }
 
-    function applyTranslations() {
+
+    // Augment global applyTranslations
+    const originalApplyTranslations = window.applyTranslations;
+    window.applyTranslations = function() {
+        originalApplyTranslations(); // Call the base applyTranslations
+
         document.title = translations.ui.appTitle;
         elements.prevBtn.textContent = translations.ui.previous;
         elements.nextBtn.textContent = translations.ui.next;
@@ -200,7 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
             selectElement.appendChild(option);
         });
         // Restore selected value if it exists in character object
-        const prop = selectElement.id.replace('-select', '');
+        // Determine the property name in the character object
+        let prop = selectElement.id.replace('-select', '');
+        // Special handling for species-select to map to character.race
+        if (prop === 'species') {
+            prop = 'race';
+        }
+
+        // Restore selected value if it exists in character object
         if (character[prop]) {
             selectElement.value = character[prop];
         }
@@ -323,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let isValid = true;
 
         if (currentStep === 0) { // Race and Alignment
+            console.log('Character Race:', character.race);
             if (!character.race) { isValid = false; alert(translations.validation.required + ': ' + translations.fields.species); }
             if (isValid && !character.alignment) { isValid = false; alert(translations.validation.required + ': ' + translations.fields.alignment); }
         } else if (currentStep === 1) { // Attributes
@@ -384,5 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    loadInitialData();
+        window.populateWizardOptions = populateWizardOptions;
+    window.showStep = showStep;
+    window.currentStep = currentStep;
+
 });
