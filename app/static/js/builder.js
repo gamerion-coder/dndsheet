@@ -1,3 +1,37 @@
+let translations = {};
+let currentLang = 'en';
+
+// Helper to fetch data from API (Global)
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error(`Failed to fetch ${url}:`, error);
+        return [];
+    }
+}
+
+// Set language (Global)
+async function setLanguage(lang) {
+    currentLang = lang;
+    translations = await fetchData(`/api/translations/${lang}`);
+    applyTranslations();
+    // populateWizardOptions(); // This needs to be called within DOMContentLoaded context
+    // showStep(currentStep); // This needs to be called within DOMContentLoaded context
+}
+
+// Apply translations (Global)
+function applyTranslations() {
+    // These elements and character object are not global, so this function needs to be called carefully
+    // It's better to pass the elements object or make it globally available if needed.
+    // For now, only update elements that can be found globally or are static.
+    // We'll refine this in the DOMContentLoaded block.
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const totalSteps = 10;
     let currentStep = 0;
@@ -88,18 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dndData.spells = await fetchData('/api/catalog/spells');
         dndData.feats = await fetchData('/api/catalog/feats');
 
-        // Call populate and showStep directly
+        // Load translations and apply
+
         populateWizardOptions();
         showStep(currentStep);
     }
 
-
-
-    // Augment global applyTranslations
-    const originalApplyTranslations = window.applyTranslations;
+    // Moved applyTranslations function definition here, using `elements` from DOMContentLoaded scope
     window.applyTranslations = function() {
-        originalApplyTranslations(); // Call the base applyTranslations
-
         document.title = translations.ui.appTitle;
         elements.prevBtn.textContent = translations.ui.previous;
         elements.nextBtn.textContent = translations.ui.next;
@@ -205,7 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (character[prop]) {
             selectElement.value = character[prop];
         }
-        selectElement.onchange = (e) => character[prop] = e.target.value;
+        selectElement.onchange = (e) => {
+            character[prop] = e.target.value;
+            console.log(`Character ${prop}:`, character[prop]); // Debugging for validation
+        };
     }
 
     function populateCheckboxes(containerElement, data, selectedArray, textKey, valueKey) {
@@ -324,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let isValid = true;
 
         if (currentStep === 0) { // Race and Alignment
-            console.log('Character Race:', character.race);
+            console.log('Validating Character Race:', character.race); // Debugging line
             if (!character.race) { isValid = false; alert(translations.validation.required + ': ' + translations.fields.species); }
             if (isValid && !character.alignment) { isValid = false; alert(translations.validation.required + ': ' + translations.fields.alignment); }
         } else if (currentStep === 1) { // Attributes
@@ -386,8 +419,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-        window.populateWizardOptions = populateWizardOptions;
-    window.showStep = showStep;
-    window.currentStep = currentStep;
-
+    loadInitialData();
 });
